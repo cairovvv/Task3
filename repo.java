@@ -21,7 +21,7 @@ public class Repo {
             pstmt.setString(7, s.getCourse());
             pstmt.setString(8, s.getBloodtype());
             pstmt.setString(9, s.getAddress());
-            pstmt.setInt(10, s.getContact());
+            pstmt.setString(10, s.getContact());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Save error: " + e.getMessage());
@@ -38,7 +38,7 @@ public class Repo {
             while (rs.next()) {
                 list.add(new Student(
                     rs.getInt("studentID"), rs.getString("FirstName"), rs.getString("LastName"),
-                    rs.getInt("Age"), rs.getString("Gender"), rs.getInt("Yearlvl"),
+                    rs.getString("Age"), rs.getString("Gender"), rs.getInt("Yearlvl"),
                     rs.getString("Course"), rs.getString("Bloodtype"), rs.getString("Address"),
                     rs.getInt("Contact")
                 ));
